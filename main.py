@@ -61,7 +61,7 @@ def test():
         out = mnistNet(image)
         _, predicted = torch.max(out, 1)
         crt += ((predicted == label).sum()).item()
-        total += 4
+        total += BatchSize
     print("Accuracy : %.2f"%(float(crt)/total))
 
 print("Start Training")

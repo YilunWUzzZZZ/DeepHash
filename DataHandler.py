@@ -2,8 +2,8 @@ import torchvision
 import torchvision.transforms as transforms
 import torch.utils.data
 
-PATH = 'C:/mnist'
-
+PATH = '/Users/wuyilun/Desktop/datasets'
+BatchSize = 8
 def dataNomalizer(path):
     dataset = torchvision.datasets.MNIST(path, transform=transforms.ToTensor())
     sum= 0
@@ -31,6 +31,6 @@ testset = torchvision.datasets.MNIST(PATH, train = False, transform= transforms.
     transforms.Normalize([mean], [std])
 ]))
 
-trainLoader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=0)
-testLoader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=True, num_workers=0)
+trainLoader = torch.utils.data.DataLoader(trainset, batch_size=BatchSize, shuffle=True, num_workers=0)
+testLoader = torch.utils.data.DataLoader(testset, batch_size=BatchSize, shuffle=True, num_workers=0)
 
